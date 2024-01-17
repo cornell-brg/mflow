@@ -126,6 +126,8 @@ class BuildOrchestrator:
         if type(v) is list: # can't export a list in bash, so need to serialize it
           serialized_value = ",".join(v)
           params_commands.append( params_str.format(k,serialized_value) )
+        elif type(v) is str:
+          params_commands.append('export {}=\'{}\''.format(k,v))
         else:
           params_commands.append( params_str.format(k,v) )
 
