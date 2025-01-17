@@ -46,6 +46,9 @@ set L1 [ layout create $gds1 \
                 -preserveTextAttributes \
                 -preserveProperties ]
 
+set L0_topcell [ $L0 topcell ]
+set L1_topcell [ $L1 topcell ]
+
 # Import gds1 into gds0 as a child cell
 
 puts "> Importing $L1 ($gds1) into $L0 ($gds0) in memory"
@@ -53,8 +56,6 @@ $L0 import layout $L1 FALSE append
 
 # Create a reference in gds0's topcell which points to the new child cell
 
-set L0_topcell [ $L0 topcell ]
-set L1_topcell [ $L1 topcell ]
 puts "> Creating reference for $L1_topcell in $L0_topcell at xy ($coord_x, $coord_y)"
 $L0 create ref $L0_topcell $L1_topcell $coord_x $coord_y 0 0 1.0
 
