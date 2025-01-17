@@ -51,4 +51,6 @@ postconditions:
 
   - assert File( 'outputs/innovus-foundation-flow' ) # must exist
 
+  # error checking
+  - assert '**ERROR' not in File( 'mflowgen-run.log' )
 

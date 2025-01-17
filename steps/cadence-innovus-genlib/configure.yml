@@ -57,3 +57,5 @@ postconditions:
 
   - assert File( 'outputs/design.lib' )      # must exist
 
+  # error checking
+  - assert '**ERROR' not in File( 'mflowgen-run.log' )

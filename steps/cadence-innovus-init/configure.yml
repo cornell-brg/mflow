@@ -87,5 +87,6 @@ postconditions:
   - assert 'Inconsistency detected in the capacitance units'
       not in File( 'logs/run.log' )
 
-
+  # error checking
+  - assert '**ERROR' not in File( 'mflowgen-run.log' )
 

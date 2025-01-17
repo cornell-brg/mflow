@@ -104,4 +104,5 @@ postconditions:
 
   - assert File( 'outputs/design.checkpoint' )       # must exist
 
-
+  # error checking
+  - assert '**ERROR' not in File( 'mflowgen-run.log' )

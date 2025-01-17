@@ -66,4 +66,5 @@ postconditions:
     from assertion_helpers import get_shorts
     assert len(get_shorts()) == 0, "!!!FOUND SHORTS!!!"
 
-
+  # error checking
+  - assert '**ERROR' not in File( 'mflowgen-run.log' )
